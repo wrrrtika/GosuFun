@@ -33,7 +33,7 @@ class Game < Window
     @dir = :left
     @cur_image = @standing
 
-    @floor = Floor.new(self, 0, 400, 680, 100, Color::WHITE)
+    @floor = Floor.new(self, 0, 400, 680, 100, Color::GRAY)
   end
 
   def update
