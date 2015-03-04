@@ -7,7 +7,7 @@ class Player
   def initialize(window, level, column, row)
     @window   = window
     @level    = level
-    @image    = Image.new(@window, "media/player.png", true)
+    @image    = Image.new(@window, "media/Robo_Warrior_player_sprite.png", true)
     @width    = @image.width
     @height   = @image.height
     @offset_x = 40
@@ -67,6 +67,7 @@ class Player
     if Gosu::distance(@x, @y, key.x, key.y) < 35
       puts 'key collected'
       @key_collected = true
+      @background_music = Song.new(@window, "media/Machine Blip 001.wav")
       true
     else
       false
