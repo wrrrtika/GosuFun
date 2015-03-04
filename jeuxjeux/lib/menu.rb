@@ -3,7 +3,7 @@ class Menu
     @window = window
     @title = Image.from_text(
       @window,
-      "The Mysteries of Ruby",
+      "wrrrtika world: wtfs a ruby?!",
       Gosu::default_font_name,
       150,
       10,
