@@ -25,7 +25,7 @@ end
 
 class Game < Window
   def initialize
-    super(640, 480, false)
+    super(680, 520, false)
     self.caption = "Jump Game Deux: The Jumpening"
     @standing, @walk1, @walk2, @jump = *Image.load_tiles(self, "sprites.png", 100, 160, false)
     @x, @y = 400, 0
@@ -33,13 +33,13 @@ class Game < Window
     @dir = :left
     @cur_image = @standing
 
-    @floor = Floor.new(self, 0, 400, 640, 100, Color::WHITE)
+    @floor = Floor.new(self, 0, 400, 680, 100, Color::WHITE)
   end
 
   def update
     move_x = 0
-    move_x -= 5 if button_down? KbLeft
-    move_x += 5 if button_down? KbRight
+    move_x -= 8 if button_down? KbLeft
+    move_x += 8 if button_down? KbRight
 
     # Select image depending on action
     if (move_x == 0)
@@ -69,10 +69,10 @@ class Game < Window
 
     # Vertical movement
     if @vy > 0 && @y < 300 then
-      @vy.times { @y += 1 }
+      @vy.times { @y += 1.5 }
     end
     if @vy < 0 then
-      (-@vy).times {@y -= 1}
+      (-@vy).times {@y -= 1.5}
     end
 
   end
